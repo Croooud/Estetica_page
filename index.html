@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Эстетика — салон красоты в Крымске</title>
   <meta name="description" content="Салон красоты «Эстетика» в Крымске, ул. Синёва, 36А. Ногтевой сервис, парикмахерский зал, косметология, перманентный макияж. Онлайн-запись в WhatsApp.">
-  <meta name="theme-color" content="#0a231c">
+  <meta name="theme-color" content="#081b15" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="color-scheme" content="dark" />
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -50,16 +52,22 @@
       background: linear-gradient(90deg, #fde68a 0%, #fbbf24 50%, #f59e0b 100%);
       -webkit-background-clip: text; background-clip: text; color: transparent;
     }
+    /* Тёмный холст: при оттягивании страницы (iOS Safari, Яндекс Браузер) не видно белого фона */
+    html, body {
+      background-color: #081b15 !important;
+      overscroll-behavior-y: none;
+      -webkit-overflow-scrolling: touch;
+    }
     body { -webkit-tap-highlight-color: transparent; }
     .works-pagination .swiper-pagination-bullet { width: 6px; height: 6px; background: rgba(245,245,244,.25); opacity: 1; transition: all .3s; }
     .works-pagination .swiper-pagination-bullet-active { width: 28px; border-radius: 9999px; background: #fbbf24; }
   </style>
 </head>
 
-<body class="min-h-screen bg-gradient-to-b from-[#0a231c] via-[#0f3328] to-[#081b15] bg-fixed font-sans text-stone-100 antialiased selection:bg-amber-300/30">
+<body class="min-h-screen font-sans text-stone-100 antialiased selection:bg-amber-300/30">
 
-  <!-- Фоновое сияние -->
-  <div aria-hidden="true" class="pointer-events-none fixed inset-0 overflow-hidden">
+  <!-- Фон: изумрудный градиент + сияние (фиксированный слой вместо bg-fixed — корректно работает в iOS) -->
+  <div aria-hidden="true" class="pointer-events-none fixed inset-0 overflow-hidden bg-gradient-to-b from-[#0a231c] via-[#0f3328] to-[#081b15]">
     <div class="absolute -top-40 left-1/2 h-[28rem] w-[28rem] -translate-x-1/2 rounded-full bg-amber-400/10 blur-[120px] md:left-[70%] md:h-[40rem] md:w-[40rem]"></div>
     <div class="absolute bottom-0 -left-32 h-80 w-80 rounded-full bg-emerald-500/10 blur-[120px] md:h-[32rem] md:w-[32rem]"></div>
   </div>
