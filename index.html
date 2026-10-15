@@ -213,18 +213,18 @@
       <div class="reveal text-center">
         <p class="font-script text-3xl text-amber-300 md:text-4xl">Price List</p>
         <h2 class="mt-2 font-serif text-4xl font-medium tracking-wide md:text-5xl">Услуги и цены</h2>
-        <p class="mx-auto mt-4 max-w-xs text-sm text-stone-400 md:max-w-md">Нажмите на услугу — и мы откроем WhatsApp с готовым сообщением.</p>
+        <p class="mx-auto mt-4 max-w-sm text-[15px] leading-relaxed text-stone-300 md:max-w-md md:text-base">Нажмите на услугу — и мы откроем WhatsApp с готовым сообщением.</p>
       </div>
 
       <div class="reveal -mx-6 mt-10 md:mx-0">
         <div id="tabs" role="tablist" class="no-scrollbar flex snap-x gap-2 overflow-x-auto px-6 pb-1 md:flex-wrap md:justify-center md:gap-3 md:overflow-visible md:px-0"></div>
       </div>
 
-      <div class="reveal mx-auto mt-6 rounded-3xl border border-amber-400/20 bg-emerald-950/40 p-6 shadow-soft backdrop-blur-xl md:mt-10 md:p-10 lg:p-12">
+      <div class="reveal mx-auto mt-6 rounded-3xl border border-amber-400/20 bg-emerald-950/40 p-5 shadow-soft backdrop-blur-xl sm:p-7 md:mt-10 md:p-10 lg:p-12">
         <div class="flex items-center justify-between gap-4 border-b border-amber-400/15 pb-5 md:pb-7">
           <div>
-            <p id="tab-count" class="text-[10px] font-semibold uppercase tracking-[0.2em] text-stone-500"></p>
-            <h3 id="tab-title" class="mt-1 font-serif text-2xl font-medium md:text-3xl"></h3>
+            <p id="tab-count" class="text-xs font-semibold uppercase tracking-[0.18em] text-stone-400"></p>
+            <h3 id="tab-title" class="mt-1.5 font-serif text-[1.875rem] font-medium leading-tight text-stone-50 md:text-[2.25rem]"></h3>
           </div>
           <span id="tab-icon" class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-amber-400/30 text-amber-300 md:h-12 md:w-12"></span>
         </div>
@@ -238,9 +238,19 @@
             </figcaption>
           </div>
         </figure>
-        <ul id="price-list" role="tabpanel" class="grid md:grid-cols-2 md:gap-x-12 lg:gap-x-16"></ul>
+        <ul id="price-list" role="tabpanel" class="grid xl:grid-cols-2 xl:gap-x-14"></ul>
+
+        <!-- Запись под прайсом -->
+        <div class="mt-8 flex flex-col items-center gap-4 border-t border-amber-400/15 pt-8 text-center md:mt-10 md:flex-row md:justify-between md:gap-8 md:text-left">
+          <p class="max-w-md text-[15px] leading-relaxed text-stone-300 md:text-base">Не нашли нужную услугу или сомневаетесь? Напишите — подберём процедуру и удобное время.</p>
+          <a href="https://wa.me/79002332865?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%D1%81%D1%8F%20%D0%B2%20%C2%AB%D0%AD%D1%81%D1%82%D0%B5%D1%82%D0%B8%D0%BA%D1%83%C2%BB" target="_blank" rel="noopener"
+             class="group inline-flex w-full shrink-0 items-center justify-center gap-2.5 whitespace-nowrap rounded-full bg-gradient-to-r from-amber-200 via-amber-400 to-amber-500 px-5 py-4 text-[13px] font-bold uppercase tracking-[0.1em] sm:px-8 sm:text-sm sm:tracking-[0.16em] text-[#0a231c] shadow-gold transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_16px_50px_-10px_rgba(251,191,36,0.55)] active:scale-[0.98] sm:w-auto">
+            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
+            Записаться в WhatsApp
+          </a>
+        </div>
       </div>
-      <p class="reveal mt-4 text-center text-[11px] text-stone-500">Итоговая стоимость уточняется у мастера после консультации.</p>
+      <p class="reveal mt-5 text-center text-[13px] leading-relaxed text-stone-300 md:text-sm">Итоговая стоимость уточняется у мастера после консультации.</p>
     </section>
 
     <!-- ===================== РАБОТЫ (SWIPER) ===================== -->
@@ -740,7 +750,7 @@
     const hasGsap = typeof gsap !== 'undefined';
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    const TAB_BASE = 'snap-start shrink-0 whitespace-nowrap rounded-full border px-5 py-2.5 text-xs font-semibold tracking-wide transition duration-300 md:px-7 md:py-3 md:text-sm';
+    const TAB_BASE = 'snap-start shrink-0 whitespace-nowrap rounded-full border px-5 py-3 text-[15px] font-semibold tracking-wide transition duration-300 md:px-7 md:py-3.5 md:text-base';
     const TAB_ON = 'border-transparent bg-gradient-to-r from-amber-200 via-amber-400 to-amber-500 text-[#0a231c] shadow-gold';
     const TAB_OFF = 'border-amber-400/20 bg-emerald-950/40 text-stone-300 backdrop-blur-xl hover:border-amber-400/50 hover:text-amber-300';
 
@@ -770,13 +780,14 @@
       listEl.innerHTML = cat.items.map(([name, price]) => {
         const msg = encodeURIComponent(`Здравствуйте! Хочу записаться на услугу «${name}» в салон «Эстетика».`);
         return `
-          <li class="price-row border-b border-stone-100/5">
+          <li class="price-row border-b border-stone-100/10">
             <a href="${WA}${msg}" target="_blank" rel="noopener"
-               class="group flex items-center justify-between gap-4 py-4 transition md:py-5">
-              <span class="text-sm leading-snug text-stone-200 transition group-hover:text-amber-200 md:text-[15px]">${escapeHtml(name)}</span>
-              <span class="flex shrink-0 items-center gap-2">
-                <span class="text-right text-sm font-bold text-amber-300 md:text-[15px]">${escapeHtml(price)}</span>
-                <i data-lucide="chevron-right" class="h-4 w-4 text-stone-600 transition group-hover:translate-x-0.5 group-hover:text-amber-300"></i>
+               aria-label="Записаться: ${escapeHtml(name)}, ${escapeHtml(price)}"
+               class="group flex flex-wrap items-center gap-x-4 gap-y-1.5 py-5 transition md:py-6">
+              <span class="min-w-0 flex-[1_1_10rem] text-base leading-snug text-stone-50 transition group-hover:text-amber-100 md:text-[17px] xl:text-lg">${escapeHtml(name)}</span>
+              <span class="ml-auto flex shrink-0 items-center gap-2 whitespace-nowrap">
+                <span class="text-lg font-semibold tabular-nums text-amber-300 md:text-[19px] xl:text-xl">${escapeHtml(price)}</span>
+                <svg class="h-4 w-4 text-amber-300/60 transition group-hover:translate-x-0.5 group-hover:text-amber-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
               </span>
             </a>
           </li>`;
